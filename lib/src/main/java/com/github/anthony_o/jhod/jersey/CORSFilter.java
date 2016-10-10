@@ -6,7 +6,10 @@ import javax.ws.rs.container.ContainerResponseFilter;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
 
-// This filter thanks to http://stackoverflow.com/a/28067653/535203
+/**
+ * This is a Jersey {@link ContainerResponseFilter} which allow all CORS accesses to your JAX-RS services and avoid "No 'Access-Control-Allow-Origin' header is present on the requested resource" errors.<br>
+ * Thanks to http://stackoverflow.com/a/28067653/535203
+ */
 @Provider
 public class CORSFilter implements ContainerResponseFilter {
 

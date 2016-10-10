@@ -5,7 +5,7 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import java.util.concurrent.TimeUnit;
 
 /**
- * This object contains all the running parts of your jhod app.<br/>
+ * This object contains all the running parts of your jhod app.<br>
  * From here, you will be able to access either the Jersey HTTP server (via {@link #getHttpServer()}) or the NW.js {@link Process} started by jhod (via {@link #getNwProcess()}).
  * It also contains the final method used to wait indefinitely for the user to close the NW.js window, and shutdown the Jersey server.
  */

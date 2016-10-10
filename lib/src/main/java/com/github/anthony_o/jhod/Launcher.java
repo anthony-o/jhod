@@ -17,17 +17,17 @@ import java.nio.file.Paths;
 import java.util.Objects;
 
 /**
- * Main entry point for starting your jhod app.<br/>
+ * Main entry point for starting your jhod app.<br>
  * You should create a {@link Launcher} using the embedded {@link Builder}: <pre> {@code
  *   Launcher.createBuilder()
  *       .appObject(this)
  *       .resourceConfig(new MyAppJerseyConfig())
  *       .build()
- * }</pre><br/>
- * You must call (and set) at least {@link Builder#resourceConfig(ResourceConfig)} and one of {@link Builder#appClass(Class)}, {@link Builder#appObject(Object)} or {@link Builder#appPath(Path)}.<br/>
- * The 'NW_HOME' environment variable must have also been set (and must point to the NW.js runtime root folder) before calling {@link Launcher#launch()}.<br/>
- * After having been launched (via {@link Launcher#launch()}), the port on which the Jersey server has started is accessible via the file you set by calling {@link Builder#appRelativeJsPortPath(Path)} (which defaults to {@code "js/tempPort.js"}).<br/>
- * This file should be used by your HTML app (coded in your {@code app} folder) in order to communicate between your HTML GUI and your Java Jersey code.<br/>
+ * }</pre><br>
+ * You must call (and set) at least {@link Builder#resourceConfig(ResourceConfig)} and one of {@link Builder#appClass(Class)}, {@link Builder#appObject(Object)} or {@link Builder#appPath(Path)}.<br>
+ * The 'NW_HOME' environment variable must have also been set (and must point to the NW.js runtime root folder) before calling {@link Launcher#launch()}.<br>
+ * After having been launched (via {@link Launcher#launch()}), the port on which the Jersey server has started is accessible via the file you set by calling {@link Builder#appRelativeJsPortPath(Path)} (which defaults to {@code "js/tempPort.js"}).<br>
+ * This file should be used by your HTML app (coded in your {@code app} folder) in order to communicate between your HTML GUI and your Java Jersey code.<br>
  * After jhod has started, you should call {@link Service#waitForTerminationThenShutdown()} in order to wait indefinitely for the user to close the NW.js window, and shutdown the Jersey server.
  */
 public class Launcher {
@@ -69,7 +69,7 @@ public class Launcher {
         }
 
         /**
-         * Sets the path (relative to your {@code app} directory) to the file in which jhod should write the port on which Jersey has started.<br/>
+         * Sets the path (relative to your {@code app} directory) to the file in which jhod should write the port on which Jersey has started.<br>
          * This is not mandatory to set and defaults to {@code "js/tempPort.js"}.
          * @param appRelativeJsPortPath path (relative to your {@code app} directory) to the file in which jhod should write the port on which Jersey has started
          * @return this {@link Builder}
@@ -80,8 +80,8 @@ public class Launcher {
         }
 
         /**
-         * Sets a class which is a part of your Java jhod code in order for jhod to find the {@code appPath}.<br/>
-         * Either one of {@link #appClass(Class)}, {@link #appObject(Object)} or {@link #appPath(Path)} must be called & set.
+         * Sets a class which is a part of your Java jhod code in order for jhod to find the {@code appPath}.<br>
+         * Either one of {@link #appClass(Class)}, {@link #appObject(Object)} or {@link #appPath(Path)} must be called &amp; set.
          * @param appClass a class which is a part of your Java jhod code
          * @return this {@link Builder}
          */
@@ -91,8 +91,8 @@ public class Launcher {
         }
 
         /**
-         * Sets an {@link Object} which class is a part of your Java jhod code in order for jhod to find the {@code appPath}.<br/>
-         * Either one of {@link #appClass(Class)}, {@link #appObject(Object)} or {@link #appPath(Path)} must be called & set.
+         * Sets an {@link Object} which class is a part of your Java jhod code in order for jhod to find the {@code appPath}.<br>
+         * Either one of {@link #appClass(Class)}, {@link #appObject(Object)} or {@link #appPath(Path)} must be called &amp; set.
          * @param appObject an object which class is a part of your Java jhod code
          * @return this {@link Builder}
          */
@@ -102,8 +102,8 @@ public class Launcher {
         }
 
         /**
-         * Sets the {@link Path} to your {@code app} directory, which contains your HTML app jhod code.<br/>
-         * Either one of {@link #appClass(Class)}, {@link #appObject(Object)} or {@link #appPath(Path)} must be called & set.
+         * Sets the {@link Path} to your {@code app} directory, which contains your HTML app jhod code.<br>
+         * Either one of {@link #appClass(Class)}, {@link #appObject(Object)} or {@link #appPath(Path)} must be called &amp; set.
          * @param appPath the {@link Path} to your {@code app} directory
          * @return this {@link Builder}
          */

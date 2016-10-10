@@ -110,11 +110,7 @@ Here is the `distrib.xml` file you can write:
 ```
 
 # Installation
-Download and install a JDK 8 (or JRE) & a NW.js SDK (or "normal" runtime), then clone this project and execute this:
-```bash
-cd jhod/lib
-mvn install
-```
+Download and install a JDK 8 (or JRE) & a NW.js SDK (or "normal" runtime).
 
 # TODOs / Ideas
 
