@@ -1,6 +1,6 @@
 # jhod - Java HTML on Desktop
 
-**jhod** is a platform which enables you to write desktop applications with all Web technologies for the GUI, and use Java JVM for "backend" (or heavy) processes.
+**jhod** is a platform which enables you to develop desktop applications with all Web technologies for the GUI (HTML, JavaScript, CSS...), and use Java JVM for "backend" (or heavy) processes.
 
 It is based on [NW.js](http://nwjs.io/) + [Jersey](http://jersey.java.net/). So you can use HTML5 for frontend (for example) and use JAX-RS APIs as entry points for your Java processes.
 
@@ -30,8 +30,14 @@ Launcher.createBuilder()
 
 Now add `NW_HOME` to your environment variables (make this pointing to the directory of the NW.js runtime you previously installed).
 
-You're now able to start your Java project like any others and see it launching your NW.js app which will communicate with your Java JAX-RS classes through a local Jersey server launched on a port specified in `app/js/tempPort.js` (by default).
+You're now able to start your Java project like any others and see it launching your NW.js app which will communicate (using [XMLHttpRequests](https://en.wikipedia.org/wiki/XMLHttpRequest)) with your Java JAX-RS classes through a local Jersey server launched on a port specified in `app/js/tempPort.js` (by default).
 
+Here is a sample content of that file:
+```js
+var serverPort = 57442;
+```
+
+# Packaging
 In order to package it, you can add this to your `pom.xml` in the `<build><plugins>` section:
 ```xml
 <plugin>
@@ -118,3 +124,9 @@ Here are ideas for the future of this platform:
  * Develop an executable which will be the main entry to launch apps and will download & install the needed JRE & NW.js runtime (displaying a progress bar to the user) before really launching the app (using [Go](https://golang.org/) + [ui](https://github.com/andlabs/ui) for example in order to create native executables)
    * Those runtimes should be installed in the user system applications folder, or if he/she has not the rights, in his/her personal applications folder in order to share the runtimes between jhod applications
  * Enables the developer to specify (in a JSON) the version of Java JRE & NW.js runtime he/she wants
+ * Add a way to choose [Electron](http://electron.atom.io/) instead NW.js & simple Tomcat (& simple Servlet technologies) instead of Jersey
+ * Add a "packager" that could create installers of jhod app with those different options:
+   * A package that would contain all that is necessary for the app to work (JRE + NW.js runtime + libs (Java & JS))
+   * A package that would contain all libs (Java & JS) but not the runtimes which would be downloaded when running the first time the app (like in the first TODO)
+   * A "super-light" package that would contain only the sources & which would be automatically compiled (with libs & runtime downloaded) the first time it is executed
+ * Add a way update the app (& the jhod executable which bootstrap all which would be develop in the first TODO)
